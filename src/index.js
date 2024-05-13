@@ -2,11 +2,15 @@
 require('dotenv').config();
 const express=require('express');
 const morgan=require('morgan');
+const cors=require('cors');
 
 //Rutas
 const routes=require('./routes/routes');
 
 const app = express();
+//cors para comunicar ambos servers
+app.use(cors());
+
 //morgan para ver en consola las peticiones usado para dev  
 app.use(morgan('dev'));
 
