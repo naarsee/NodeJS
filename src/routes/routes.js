@@ -10,16 +10,13 @@ const { login, register }=require('../controllers/auth');
 const {checkToken}=require('../middleware/auth');
 
 //conecto el controlador
-const {getAllBooks, deleteBook, addBook, updateBook}=require('../controllers/controller');
+const {getAllBooks, deleteBook, addBook}=require('../controllers/controller');
 
 router.get('/books', getAllBooks);
 
 router.post('/books',checkToken, addBook);
 
 router.delete('/books/:id',checkToken, deleteBook);
-
-router.put('/books/:id', updateBook);
-
 
 //Rutas de auth
 router.post('/auth/login',login);

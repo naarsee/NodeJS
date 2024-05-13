@@ -66,13 +66,8 @@ const deleteBook = async (req, res) => {
     }
 }
 
-const updateBook = (req, res) => {
-    res.send()
-}
-
 module.exports = {
     getAllBooks,
     addBook,
-    deleteBook,
-    updateBook
+    deleteBook
 }
