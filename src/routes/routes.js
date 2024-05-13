@@ -10,9 +10,7 @@ const { login, register }=require('../controllers/auth');
 const {checkToken}=require('../middleware/auth');
 
 //conecto el controlador
-const {home, getAllBooks, deleteBook, addBook, updateBook}=require('../controllers/controller');
-
-router.get('/', home);
+const {getAllBooks, deleteBook, addBook, updateBook}=require('../controllers/controller');
 
 router.get('/books', getAllBooks);
 

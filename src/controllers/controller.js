@@ -3,9 +3,6 @@ const database = require('../database');
 const{format}=require('date-fns');
 const jwt = require('jsonwebtoken');
 
-const home = async (req, res) => {
-    res.send('hi')
-}
 
 const getAllBooks = async (req, res) => {
     try {
@@ -48,8 +45,6 @@ const addBook = async (req, res) => {
     }
 }
 
-
-
 const deleteBook = async (req, res) => {
     try {
         
@@ -74,8 +69,8 @@ const deleteBook = async (req, res) => {
 const updateBook = (req, res) => {
     res.send()
 }
+
 module.exports = {
-    home,
     getAllBooks,
     addBook,
     deleteBook,
