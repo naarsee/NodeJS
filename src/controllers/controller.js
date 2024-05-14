@@ -8,9 +8,9 @@ const getAllBooks = async (req, res) => {
     try {
 
         const books=await database.query ("SELECT books.*, users.name AS user_name FROM books JOIN users ON books.user_id = users.id");
-        res.json(books.rows)
+        res.json(books.rows);
     } catch (error) {
-        console.log(error.message )
+        console.log(error.message );
     }
 }
 
@@ -50,8 +50,7 @@ const deleteBook = async (req, res) => {
         
     const{id}=req.params;
 
-    const result=await database.query("DELETE FROM books WHERE id= $1", 
-    [id]);
+    const result=await database.query("DELETE FROM books WHERE id= $1", [id]);
     if (result.rowCount==0){
         return res.status(404).json({
             message:"Libro no encontrado"
